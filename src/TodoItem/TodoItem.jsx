@@ -4,9 +4,9 @@ const colorByStatus = (status) => {
   return 'red'
 }
 export const TodoItem = ({ todo , markAsDone }) => {
-  return <li style={{ color: colorByStatus (todo.status) }}>{todo.title}
+  return <li className="todo-item" style={{ color: colorByStatus (todo.status) }}>{todo.title}
   {todo.status !== 'done' && (
-  <button onClick={() => markAsDone(todo.id)}>המשימה בוצעה</button>
+  <button className="todo-button" onClick={() => markAsDone(todo.id)}>המשימה בוצעה</button>
 )}
   </li>
 }

@@ -23,7 +23,7 @@ const addTask = (title) => {
   return (
     <>
     <TodoForm addTask={addTask}></TodoForm>
-    <ul>
+    <ul className="todo-list">
       {todos.map((todo) => (
         <TodoItem key={todo.id} todo={todo} markAsDone={markAsDone} />
       ))}
