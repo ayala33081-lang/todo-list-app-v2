@@ -8,6 +8,13 @@ export const TodoList = () => {
     { id: 2, title: 'לנקות את החדר', status: `done` },
     { id: 3, title: 'לקנות חלב', status: `almost done` }
   ])
+const markAsDone = (id) => {
+  setTodos(
+    todos.map((todo) =>
+      todo.id === id ? { ...todo, status: 'done' } : todo
+    )
+  )
+}
   
 const addTask = (title) => {
   if (title === '') return
@@ -18,7 +25,7 @@ const addTask = (title) => {
     <TodoForm addTask={addTask}></TodoForm>
     <ul>
       {todos.map((todo) => (
-        <TodoItem key={todo.id} todo={todo} />
+        <TodoItem key={todo.id} todo={todo} markAsDone={markAsDone} />
       ))}
     </ul>
     </>
