@@ -1,7 +1,9 @@
-const colotByStutus  = (completed) => {
-  return completed ? 'green' : 'red'
+const colorByStatus = (status) => {
+  if (status === 'done') return 'green'
+  if (status === 'almost done') return 'orange'
+  return 'red'
 }
 export const TodoItem = ({ todo }) => {
-  return <li style={{ color: colotByStutus (todo.completed) }}>{todo.title}</li>
+  return <li style={{ color: colotByStutus (todo.status) }}>{todo.title}</li>
 }
 
